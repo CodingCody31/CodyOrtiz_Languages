@@ -29,7 +29,14 @@ public class Language {
 	    @Size(min = 3, max = 40)
 	    private String version;
 	    
-	    // This will not allow the createdAt column to be updated after creation
+	    public Language(Long id, String name, String creator, String version) {
+			
+			this.id = id;
+			this.name = name;
+			this.creator = creator;
+			this.version = version;
+		}
+		// This will not allow the createdAt column to be updated after creation
 	    @Column(updatable=false)
 	    @DateTimeFormat(pattern="yyyy-MM-dd")
 	    private Calendar createdAt;
